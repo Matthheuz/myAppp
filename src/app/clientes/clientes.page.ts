@@ -1,35 +1,29 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { from, Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../model/cliente';
+import { ClienteService } from '../services/cliente.service';
 
-@Injectable()
-export class ClienteService{
-    cliente : Cliente = new Cliente();
+@Component({
+  selector: 'app-clientes',
+  templateUrl: './clientes.page.html',
+  styleUrls: ['./clientes.page.scss'],
+})
+export class ClientesPage implements OnInit {
 
-    constructor(private firestore: AngularFirestore){
+  lista : Cliente[] = [];
 
-    }
+  constructor(private clienteServ : ClienteService) { }
 
-    listaDeClientes() : Observable<any>{
+  ngOnInit() {
+    this.clienteServ.listaDeClientes().subscribe(response=>{
+      
+      console.log(response); 
+      this.lista = response;
+      console.log(this.lista); 
 
-        
-        return from(new Observable(observe =>{ 
-            this.firestore.collection('cliente').snapshotChanges().subscribe(response=>{
-           let lista: Cliente[] = [];
-                response.map(obj =>{
-                let cliente: Cliente = new Cliente();
-                    cliente.setData(obj.payload.doc.data());
-                    cliente.id = obj.payload.doc.id; 
-                    lista.push(cliente); 
-                });
-                observe.next(lista);
-            })
-
-        }))
-    }
-
- 
-
+      
+    },err=>{
+      // erro
+    })
+  }
 
 }

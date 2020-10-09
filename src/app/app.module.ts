@@ -13,7 +13,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
-import { ClienteService } from './service/cliente-service';
+import { ClienteService } from './services/cliente.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { ClienteService } from './service/cliente-service';
     HttpClientModule,
     AngularFirestoreModule,
     AngularFireStorageModule
+
   ],
   providers: [
     StatusBar,
