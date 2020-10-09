@@ -13,7 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
-import { ClienteService } from './services/cliente.service';
+import { ClienteService } from './service/cliente-service';
 
 
 @NgModule({

@@ -34,14 +34,13 @@ export class LoginPage implements OnInit {
 
     this.template.loading.then(load=>{ // mensagem carregando
 
-      this.auth.signInWithEmailAndPassword(user,pass).then(data=>{ // envia firebase
-        // sucesso
-        load.dismiss(); // encerrando mensagem
-        this.menuCtrl.enable(true); // ativando menu
-        this.navCtrl.navigateRoot(['clientes']); // redirecionar
+      this.auth.signInWithEmailAndPassword(user,pass).then(data=>{ 
+        load.dismiss(); 
+        this.menuCtrl.enable(true); 
+        this.navCtrl.navigateRoot(['clientes']); 
       }).catch(data=>{
-        //erro
-        load.dismiss(); // encerrando mensagem
+        
+        load.dismiss(); 
         this.template.myAlert("Erro ao atenticar");
       })
 
