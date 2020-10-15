@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebase : {
-    apiKey: "AIzaSyD-a5_iWdNDRTHBo81MP0ukiMlCTjkbQbI",
-    authDomain: "senac-20195.firebaseapp.com",
-    databaseURL: "https://senac-20195.firebaseio.com",
-    projectId: "senac-20195",
-    storageBucket: "senac-20195.appspot.com",
-    messagingSenderId: "604562411891",
-    appId: "1:604562411891:web:32865d9dcb1fbe2d3ff506"
+    apiKey: "AIzaSyDIxwz3zmzaOr97FY-oTOjlfo29NbozzGw",
+    authDomain: "projeto-integrador-a7c33.firebaseapp.com",
+    databaseURL: "https://projeto-integrador-a7c33.firebaseio.com",
+    projectId: "projeto-integrador-a7c33",
+    storageBucket: "projeto-integrador-a7c33.appspot.com",
+    messagingSenderId: "1014858964734",
+    appId: "1:1014858964734:web:206c705e588fa633b48faf"
   }
 };
