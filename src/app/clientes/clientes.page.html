@@ -12,7 +12,7 @@
   <ion-list>
     <ion-item *ngFor="let cliente of lista">
       <ion-label>{{cliente.nome}}</ion-label>
-      <ion-input></ion-input>
+      <ion-button (click)="visualizar(cliente)">Visualizar</ion-button>
     </ion-item>
   </ion-list>
 
